@@ -71,7 +71,7 @@ export const updatePainting = async (req, res, next) => {
       { new: true }
     );
     if (!updatedPainting) {
-      throw { statusCode: 404, message: "book not found" };
+      throw { statusCode: 404, message: "painting not found" };
     }
     res.json(updatedPainting);
   } catch (error) {
