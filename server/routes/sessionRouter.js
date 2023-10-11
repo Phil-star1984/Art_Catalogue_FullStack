@@ -9,10 +9,10 @@ sessionRouter.get("/login", (req, res) => {
   );
 });
 
-sessionRouter.post("/connect", (req, res) => {
+sessionRouter.post("/login", (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
-  console.log(req.body);
+  console.log(req);
   res.send(`Username: ${username} Password: ${password}`);
 });
 
