@@ -14,7 +14,7 @@ function NavBar() {
       className="bg-body-tertiary"
     >
       <Container>
-        <Navbar.Brand href="#home">ART CATALOGUE</Navbar.Brand>
+        <Navbar.Brand href="#home">MILLIONPAINTER ART CATALOGUE</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">

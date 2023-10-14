@@ -16,7 +16,7 @@ function Home() {
     artist: "",
     year: "",
     description: "",
-    imgUrl: "",
+    imageUrl: "",
   });
 
   /*   const handleSubmit = (e) => {
@@ -48,7 +48,17 @@ function Home() {
     console.log(painting);
   }, [painting]); */
 
-  const handleClick = (event) => {};
+  const handleClick = (event) => {
+    event.preventDefault();
+    console.log(painting);
+
+    axios
+      .post(`${import.meta.env.VITE_URI}/paintings`, painting)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+
+    setPainting("");
+  };
 
   return (
     <>
@@ -77,7 +87,23 @@ function Home() {
           <Form.Control
             name="year"
             value={painting.year}
-            placeholder="Enter Painting Year"
+            placeholder="Painting Year"
+            onChange={handleChange}
+          />
+
+          <Form.Label>Description</Form.Label>
+          <Form.Control
+            name="description"
+            value={painting.description}
+            placeholder="Painting Description"
+            onChange={handleChange}
+          />
+
+          <Form.Label>Image URL</Form.Label>
+          <Form.Control
+            name="imageUrl"
+            value={painting.imageUrl}
+            placeholder="Image URL"
             onChange={handleChange}
           />
         </Form.Group>

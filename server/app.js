@@ -15,9 +15,9 @@ const sess = {
   saveUninitialized: false,
 };
 
-app.use(cors({ origin: "*" }));
+app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(session(sess));
 
 app.use("/paintings", paintingsRouter);
