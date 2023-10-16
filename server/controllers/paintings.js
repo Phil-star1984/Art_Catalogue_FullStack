@@ -78,3 +78,16 @@ export const updatePainting = async (req, res, next) => {
     next(error);
   }
 };
+
+
+export const deletePainting = async (req, res, next) => {
+  /* const { id } = req.params; */
+
+  try {
+    const result = await Paintings.findOneAndDelete(req.params.id)
+    
+  } catch (error) {
+    
+  }
+
+}

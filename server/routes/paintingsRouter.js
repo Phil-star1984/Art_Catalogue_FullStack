@@ -13,5 +13,6 @@ paintingsRouter
   .route("/:id")
   .get(paintingsController.getPaintingById)
   .post(paintingsController.updatePainting);
+  .delete(paintingsController.deletePainting);
 
 export default paintingsRouter;

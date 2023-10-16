@@ -33,6 +33,19 @@
   }
 }
 
+.catalogue_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.crud_container {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  width: 400px;
+}
+
 .card {
   padding: 2em;
 }
