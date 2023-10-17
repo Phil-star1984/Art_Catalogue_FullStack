@@ -22,13 +22,13 @@ function Catalogue() {
 
   useEffect(() => {
     fetchPaintings();
-  }, []);
+  }, [setPaintings]);
 
   const handleDelete = async (paintingId) => {
     await axios.delete(`http://localhost:5005/paintings/${paintingId}`);
-    console.log(paintingId);
+
     setPaintings((prevPaintings) => {
-      prevPaintings.filter((painting) => painting.id !== paintingId);
+      return prevPaintings.filter((painting) => painting.id !== paintingId);
     });
     alert("Painting successfully deleted");
   };
@@ -43,10 +43,7 @@ function Catalogue() {
             <Card.Body>
               <Card.Title>{item.title}</Card.Title>
               <Card.Text>{item.description}</Card.Text>
-              <Button
-                onClick={() => handleDelete(paintings._id)}
-                variant="primary"
-              >
+              <Button onClick={() => handleDelete(item._id)} variant="primary">
                 Delete Painting
               </Button>
             </Card.Body>

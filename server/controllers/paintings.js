@@ -79,15 +79,16 @@ export const updatePainting = async (req, res, next) => {
   }
 };
 
-
 export const deletePainting = async (req, res, next) => {
-  /* const { id } = req.params; */
+  const { id } = req.params; // Die ID aus den Request-Parametern extrahieren
 
   try {
-    const result = await Paintings.findOneAndDelete(req.params.id)
-    
+    const result = await Paintings.findOneAndDelete({ _id: id });
+    if (!result) {
+      throw { statusCode: 404, message: "Painting not found" };
+    }
+    res.json({ message: "Painting deleted successfully" });
   } catch (error) {
-    
+    next(error);
   }
-
-}
+};
