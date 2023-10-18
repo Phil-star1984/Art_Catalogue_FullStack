@@ -56,8 +56,6 @@ function Home() {
       .post(`${import.meta.env.VITE_URI}/paintings`, painting)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
-
-      
   };
 
   return (
