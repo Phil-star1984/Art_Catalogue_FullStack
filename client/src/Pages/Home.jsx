@@ -57,7 +57,7 @@ function Home() {
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
 
-    setPainting("");
+      
   };
 
   return (
