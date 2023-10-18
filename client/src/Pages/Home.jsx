@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
 
-function Home() {
+function Home({ setPaintings }) {
   /*   const [title, setTitle] = useState();
   const [artist, setArtist] = useState();
   const [year, setYear] = useState();
@@ -54,7 +54,12 @@ function Home() {
 
     axios
       .post(`${import.meta.env.VITE_URI}/paintings`, painting)
-      .then((res) => console.log(res))
+      .then((res) => {
+        console.log(res);
+        setPaintings((prevPaintings) => [...prevPaintings, res.data]);
+        alert("Paintings added");
+      })
+
       .catch((err) => console.log(err));
   };
 
