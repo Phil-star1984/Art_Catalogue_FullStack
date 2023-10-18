@@ -10,7 +10,7 @@ function Catalogue() {
 
   const fetchPaintings = () => {
     axios
-      .get("http://localhost:5005/paintings")
+      .get("https://art-catalogue-fullstack.onrender.com/paintings")
       .then((res) => {
         setPaintings(res.data);
         console.log(res.data);
@@ -25,7 +25,7 @@ function Catalogue() {
   }, [setPaintings]);
 
   const handleDelete = async (paintingId) => {
-    await axios.delete(`http://localhost:5005/paintings/${paintingId}`);
+    await axios.delete(`https://art-catalogue-fullstack.onrender.com/paintings/${paintingId}`);
 
     setPaintings((prevPaintings) => {
       return prevPaintings.filter((painting) => painting.id !== paintingId);

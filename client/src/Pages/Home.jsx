@@ -53,7 +53,7 @@ function Home({ setPaintings }) {
     console.log(painting);
 
     axios
-      .post(`${import.meta.env.VITE_URI}/paintings`, painting)
+      .post(`https://art-catalogue-fullstack.onrender.com/paintings`, painting)
       .then((res) => {
         console.log(res);
         setPaintings((prevPaintings) => [...prevPaintings, res.data]);
